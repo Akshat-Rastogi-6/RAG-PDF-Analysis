@@ -12,11 +12,14 @@ def main():
     query = st.text_input("Enter your query")
     
     # Output section
-    if uploaded_file is not None:
-        # Perform analysis on the uploaded file and query
-        output = analyze_pdf(uploaded_file, query)
-        st.write("Output:")
-        st.markdown(output)
+    if uploaded_file and query is not None:
+        try:
+            # Perform analysis on the uploaded file and query
+            output = analyze_pdf(uploaded_file, query)
+            st.write("Output:")
+            st.markdown(output)
+        except Exception as e:
+            pass
 
 def analyze_pdf(file, query):
     data = pdfanalyze(file, query)
