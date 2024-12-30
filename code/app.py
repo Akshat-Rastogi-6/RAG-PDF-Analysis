@@ -24,6 +24,8 @@ def main():
                 st.markdown(output)
             except Exception as e:
                 pass
+    elif gemini_api is None:
+        st.status("Please enter your Gemini API key to continue.")
 
 def analyze_pdf(file, query):
     data = pdfanalyze(file, query)
