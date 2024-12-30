@@ -5,7 +5,7 @@ from analyze import pdfanalyze
 def main():
     st.title("PDF Analysis Tool")
 
-    gemini_api = st.text_input("Enter your Gemini API key:")
+    gemini_api = st.text_input("Enter your Gemini API key:", type="password")
     genai.configure(api_key=gemini_api)
 
     if gemini_api is not None:
