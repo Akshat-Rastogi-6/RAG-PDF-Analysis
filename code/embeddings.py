@@ -3,7 +3,6 @@ import google.generativeai as genai
 import torch
 from dotenv import load_dotenv
 load_dotenv()
-genai.configure(api_key=os.environ['GEMINI_API_KEY'])
 
 def embedd(chunks):
     result = genai.embed_content(
