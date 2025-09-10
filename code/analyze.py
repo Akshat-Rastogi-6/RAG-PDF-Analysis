@@ -11,6 +11,6 @@ def pdfanalyze(file, query):
     index = store_embeddings(embeddings)
 
     query_embedding = embedd(query)
-    result = search_embeddings(query_embedding, index, chunks)
+    result = search_embeddings(query_embedding, index, chunks) 
     resp = response(result, query)
     return resp

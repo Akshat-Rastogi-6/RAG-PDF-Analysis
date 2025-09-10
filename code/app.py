@@ -1,11 +1,16 @@
+import os
 import streamlit as st
 import google.generativeai as genai
 from analyze import pdfanalyze
+from dotenv import load_dotenv
 
+load_dotenv()
 def main():
     st.title("PDF Analysis Tool")
+    st.write("Upload a PDF document and enter your query to analyze its content.")
 
-    gemini_api = st.text_input("Enter your Gemini API key:", type="password")
+    # gemini_api = st.text_input("Enter your Gemini API key:", type="password")
+    gemini_api = os.getenv("GEMINI_API_KEY")
     genai.configure(api_key=gemini_api)
 
     if gemini_api is not None:
